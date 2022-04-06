@@ -22,5 +22,12 @@ std::ostream& operator<<(std::ostream& stream, String& string)
 }
 
 int main() {
+    std::vector<String> strings;
+
+    strings.push_back("Serhat0");
+    strings.push_back("Serhat1");
+    strings.push_back("Serhat2");
+    strings.push_back("Serhat3");
+    strings.push_back("Serhat4");
 
 }
