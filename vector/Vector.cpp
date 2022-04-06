@@ -15,6 +15,11 @@ public:
     }
 };
 
+struct Vector3
+{
+    float x, y, z;
+};
+
 std::ostream& operator<<(std::ostream& stream, String& string)
 {
     stream << string.getString();
@@ -34,4 +39,10 @@ int main() {
     {
         std::cout << s << std::endl;
     }
+
+    std::vector<Vector3> vector3d;
+
+    vector3d.push_back({ 1,2,3 });
+    vector3d.push_back({ 4,5,6 });
+    vector3d.push_back({ 7,8,9 });
 }
