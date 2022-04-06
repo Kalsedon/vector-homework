@@ -15,6 +15,12 @@ public:
     }
 };
 
+std::ostream& operator<<(std::ostream& stream, String& string)
+{
+    stream << string.getString();
+    return stream;
+}
+
 int main() {
 
 }
