@@ -30,4 +30,8 @@ int main() {
     strings.push_back("Serhat3");
     strings.push_back("Serhat4");
 
+    for (String s : strings)
+    {
+        std::cout << s << std::endl;
+    }
 }
