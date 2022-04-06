@@ -25,7 +25,11 @@ std::ostream& operator<<(std::ostream& stream, String& string)
     stream << string.getString();
     return stream;
 }
-
+std::ostream& operator<<(std::ostream& stream, Vector3 vector3)
+{
+    stream << vector3.x << ", " << vector3.y << ", " << vector3.z;
+    return stream;
+}
 int main() {
     std::vector<String> strings;
 
@@ -45,4 +49,8 @@ int main() {
     vector3d.push_back({ 1,2,3 });
     vector3d.push_back({ 4,5,6 });
     vector3d.push_back({ 7,8,9 });
+    for (Vector3 vec : vector3d)
+    {
+        std::cout << vec << std::endl;
+    }
 }
