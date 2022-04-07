@@ -33,6 +33,9 @@ public:
 struct Vector3
 {
     float x, y, z;
+    Vector3(int x, int y, int z)
+        : x(x), y(y), z(z)
+    {}
 };
 
 std::ostream& operator<<(std::ostream& stream, String& string)
@@ -49,11 +52,11 @@ std::ostream& operator<<(std::ostream& stream, Vector3& vector3)
 int main() {
     std::vector<String> strings;
     strings.reserve(5);
-    strings.push_back("Serhat0");
-    strings.push_back("Serhat1");
-    strings.push_back("Serhat2");
-    strings.push_back("Serhat3");
-    strings.push_back("Serhat4");
+    strings.emplace_back("Serhat0");
+    strings.emplace_back("Serhat1");
+    strings.emplace_back("Serhat2");
+    strings.emplace_back("Serhat3");
+    strings.emplace_back("Serhat4");
 
     for (String s : strings)
     {
@@ -62,9 +65,9 @@ int main() {
 
     std::vector<Vector3> vector3d;
 
-    vector3d.push_back({ 1,2,3 });
-    vector3d.push_back({ 4,5,6 });
-    vector3d.push_back({ 7,8,9 });
+    vector3d.emplace_back( 1,2,3 );
+    vector3d.emplace_back( 4,5,6 );
+    vector3d.emplace_back( 7,8,9 );
     for (Vector3 vec : vector3d)
     {
         std::cout << vec << std::endl;
