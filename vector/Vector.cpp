@@ -4,11 +4,16 @@ class String
 {
 private:
     const char* m_Buffer;
-
 public:
     String(const char* array)
         : m_Buffer(array)
     {}
+    String(const String& string) //copy constructor
+        :
+        m_Buffer(string.m_Buffer)
+    {
+        std::cout << "String copied";
+    }
     const char*& getString()
     {
         return m_Buffer;
@@ -53,4 +58,5 @@ int main() {
     {
         std::cout << vec << std::endl;
     }
+
 }
