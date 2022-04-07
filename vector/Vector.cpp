@@ -3,20 +3,28 @@
 class String
 {
 private:
-    const char* m_Buffer;
+    char* m_Buffer;
+    int m_Size;
 public:
-    String(const char* array)
-        : m_Buffer(array)
-    {}
+    String(const char* string)
+    {
+        m_Size = strlen(string);
+        m_Buffer = new char[m_Size+1];
+        memcpy(m_Buffer, string, m_Size + 1);
+    }
     String(const String& string) //copy constructor
         :
         m_Buffer(string.m_Buffer)
     {
-        std::cout << "String copied";
+      //  std::cout << "String copied" << std::endl;
     }
-    const char*& getString()
+    char*& getString()
     {
         return m_Buffer;
+    }
+    char& operator[](int index)
+    {
+        return m_Buffer[index];
     }
 };
 
@@ -30,11 +38,12 @@ std::ostream& operator<<(std::ostream& stream, String& string)
     stream << string.getString();
     return stream;
 }
-std::ostream& operator<<(std::ostream& stream, Vector3 vector3)
+std::ostream& operator<<(std::ostream& stream, Vector3& vector3)
 {
     stream << vector3.x << ", " << vector3.y << ", " << vector3.z;
     return stream;
 }
+
 int main() {
     std::vector<String> strings;
 
@@ -58,5 +67,6 @@ int main() {
     {
         std::cout << vec << std::endl;
     }
+
 
 }
