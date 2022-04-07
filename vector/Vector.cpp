@@ -48,7 +48,7 @@ std::ostream& operator<<(std::ostream& stream, Vector3& vector3)
 
 int main() {
     std::vector<String> strings;
-
+    strings.reserve(5);
     strings.push_back("Serhat0");
     strings.push_back("Serhat1");
     strings.push_back("Serhat2");
