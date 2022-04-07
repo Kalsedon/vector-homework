@@ -9,14 +9,16 @@ public:
     String(const char* string)
     {
         m_Size = strlen(string);
-        m_Buffer = new char[m_Size+1];
+        m_Buffer = new char[m_Size + 1];
         memcpy(m_Buffer, string, m_Size + 1);
     }
     String(const String& string) //copy constructor
         :
-        m_Buffer(string.m_Buffer)
+        m_Size(string.m_Size)
     {
-      //  std::cout << "String copied" << std::endl;
+        m_Buffer = new char[m_Size + 1];
+        memcpy(m_Buffer, string.m_Buffer, m_Size + 1);
+        std::cout << "String copied" << std::endl;
     }
     char*& getString()
     {
@@ -68,5 +70,9 @@ int main() {
         std::cout << vec << std::endl;
     }
 
-
+    String s = "Serhat";
+    String y = s;
+    y[1] = 'a';
+    std::cout << s << std::endl;
+    std::cout << y << std::endl;
 }
