@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
+#define LOG(x) std::cout << x << std::endl
+
 class String
 {
 private:
     char* m_Buffer;
-    int m_Size;
+    size_t m_Size;
 public:
     String(const char* string)
     {
@@ -60,7 +62,7 @@ int main() {
 
     for (String s : strings)
     {
-        std::cout << s << std::endl;
+        LOG(s);
     }
 
     std::vector<Vector3> vector3d;
@@ -70,12 +72,12 @@ int main() {
     vector3d.emplace_back( 7,8,9 );
     for (Vector3 vec : vector3d)
     {
-        std::cout << vec << std::endl;
+        LOG(vec);
     }
 
     String s = "Serhat";
     String y = s;
     y[1] = 'a';
-    std::cout << s << std::endl;
-    std::cout << y << std::endl;
+    LOG(s);
+    LOG(y);
 }
