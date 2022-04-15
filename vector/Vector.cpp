@@ -2,6 +2,14 @@
 #include <vector>
 #define LOG(x) std::cout << x << std::endl
 
+template<typename T>
+void PrintTheVector(const std::vector<T>& array)
+{
+    for (T t : array)
+    {
+        LOG(t);
+    }
+}
 class String
 {
 private:
@@ -60,20 +68,14 @@ int main() {
     strings.emplace_back("Serhat3");
     strings.emplace_back("Serhat4");
 
-    for (String s : strings)
-    {
-        LOG(s);
-    }
+    PrintTheVector(strings);
 
     std::vector<Vector3> vector3d;
 
     vector3d.emplace_back( 1,2,3 );
     vector3d.emplace_back( 4,5,6 );
     vector3d.emplace_back( 7,8,9 );
-    for (Vector3 vec : vector3d)
-    {
-        LOG(vec);
-    }
+    PrintTheVector(vector3d);
 
     String s = "Serhat";
     String y = s;
